@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Helpdesk</title>
+    <title>{{ $page_title }}</title>
 
     <!-- Bootstrap core CSS -->
     <!-- Latest compiled and minified CSS -->

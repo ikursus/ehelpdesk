@@ -13,26 +13,34 @@
 
 Route::get('/', function() {
 
+	$page_title = 'Halaman Utama';
+
 	// view() bermaksud cari template dari folder resources/view
-	return view('home');
+	return view('home', compact('page_title') );
 
 });
 
 Route::get('/login', function() {
 
-	return view('login');
+	$page_title = 'Halaman Login';
+
+	return view('login', compact('page_title'));
 
 });
 
 Route::get('/hubungi', function() {
 
-	return 'Ini adalah halaman hubungi';
+	$page_title = 'Halaman Hubungi';
+
+	return view('hubungi', compact('page_title'));
 
 });
 
 Route::get('/respon', function() {
 
-	return 'Ini adalah halaman respon';
+	$page_title = 'Halaman Respon';
+
+	return view('respon', compact('page_title'));
 
 });
 
