@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Starter Template for Bootstrap</title>
+    <title>Helpdesk</title>
 
     <!-- Bootstrap core CSS -->
     <!-- Latest compiled and minified CSS -->
