@@ -83,4 +83,4 @@ Route::group( [ 'prefix' => 'admin' ], function() {
 
 	});
 
-} );
+} ); // Tutup kepada route group
