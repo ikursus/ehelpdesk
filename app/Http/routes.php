@@ -13,13 +13,14 @@
 
 Route::get('/', function() {
 
-	return 'Ini adalah halaman utama';
+	// view() bermaksud cari template dari folder resources/view
+	return view('home');
 
 });
 
 Route::get('/login', function() {
 
-	return 'Ini adalah halaman login';
+	return view('login');
 
 });
 
