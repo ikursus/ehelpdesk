@@ -29,5 +29,4 @@
 
 </div><!--/.col-md-->
 </div><!--/.row-->
-
 @endsection
