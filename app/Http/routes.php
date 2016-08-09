@@ -35,48 +35,52 @@ Route::get('/respon', function() {
 
 });
 
-// Route parameters
-Route::get('admin/dashboard', function() {
+// Route admin
+Route::group( [ 'prefix' => 'admin' ], function() {
 
-	return 'Ini Dashboard Admin';
+	Route::get('/dashboard', function() {
 
-});
+		return 'Ini Dashboard Admin';
 
-Route::get('admin/users', function() {
+	});
 
-	return 'Ini halaman senarai users';
+	Route::get('/users', function() {
 
-});
+		return 'Ini halaman senarai users';
 
-
-Route::get('admin/tickets', function() {
-
-	return 'Ini halaman senarai tickets support.';
-
-});
+	});
 
 
-Route::get('admin/users/{id}', function() {
+	Route::get('/tickets', function() {
 
-	return 'Ini halaman senarai profile user.';
+		return 'Ini halaman senarai tickets support.';
 
-});
+	});
 
 
-Route::get('admin/tickets/{id}', function() {
+	Route::get('/users/{id}', function() {
 
-	return 'Ini halaman detail support ticket.';
+		return 'Ini halaman senarai profile user.';
 
-});
+	});
 
-Route::get('admin/users/tambah', function() {
 
-	return 'Ini halaman tambah user.';
+	Route::get('/tickets/{id}', function() {
 
-});
+		return 'Ini halaman detail support ticket.';
 
-Route::get('admin/logout', function() {
+	});
 
-	return redirect('/login');
+	Route::get('/users/tambah', function() {
 
-});
+		return 'Ini halaman tambah user.';
+
+	});
+
+	Route::get('/logout', function() {
+
+		return redirect('/login');
+
+	});
+
+} );
