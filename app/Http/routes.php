@@ -20,9 +20,7 @@ Route::get('/', function() {
 
 Route::get('/login', function() {
 
-	$nama = '<strong>Ali</strong>';
-
-	return view('login', compact( 'nama'));
+	return view('login');
 
 });
 

@@ -1,17 +1,8 @@
-@extends('app')
+@extends('layout')
 
 @section('content')
-<div class="container">
-	<div class="row">
-		<div class="col-md-10 col-md-offset-1">
-			<div class="panel panel-default">
-				<div class="panel-heading">Home</div>
 
-				<div class="panel-body">
-					You are logged in!
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+<h1>Sistem Helpdesk Jabatan Pendaftaran Negara (JPN)</h1>
+<p class="lead">Sistem untuk menghantar sebarang pesanan / pertanyaan. Sila klik hubungi untuk menghantar segala pesanan anda.</p>
+
 @endsection
