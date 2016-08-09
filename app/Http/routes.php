@@ -11,38 +11,14 @@
 |
 */
 
-Route::get('/', function() {
+Route::get('/', 'PageController@index');
 
-	$page_title = 'Halaman Utama';
+Route::get('/login', 'PageController@login');
 
-	// view() bermaksud cari template dari folder resources/view
-	return view('home', compact('page_title') );
+Route::get('/hubungi', 'PageController@hubungi');
 
-});
+Route::get('/respon', 'PageController@respon');
 
-Route::get('/login', function() {
-
-	$page_title = 'Halaman Login';
-
-	return view('login', compact('page_title'));
-
-});
-
-Route::get('/hubungi', function() {
-
-	$page_title = 'Halaman Hubungi';
-
-	return view('hubungi', compact('page_title'));
-
-});
-
-Route::get('/respon', function() {
-
-	$page_title = 'Halaman Respon';
-
-	return view('respon', compact('page_title'));
-
-});
 
 // Route admin
 Route::group( [ 'prefix' => 'admin' ], function() {
