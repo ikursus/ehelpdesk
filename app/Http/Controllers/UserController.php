@@ -14,7 +14,7 @@ class UserController extends Controller {
 	 */
 	public function index()
 	{
-		return 'Ini adalah halaman senarai users';
+		return view('admin.users.index');
 	}
 
 	/**
@@ -44,7 +44,7 @@ class UserController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function tambah($id)
+	public function show($id)
 	{
 		return 'Ini halaman senarai profile user.';
 	}

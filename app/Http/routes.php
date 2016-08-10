@@ -12,22 +12,15 @@
 */
 
 Route::get('/', 'PageController@index');
-
 Route::get('/login', 'PageController@login');
-
 Route::get('/hubungi', 'PageController@hubungi');
-
 Route::get('/respon', 'PageController@respon');
 
 
 // Route admin
 Route::group( [ 'prefix' => 'admin' ], function() {
 
-	Route::get('/dashboard', function() {
-
-		return 'Ini Dashboard Admin';
-
-	});
+	Route::get('/dashboard', 'PageController@dashboard');
 
 	// Route berkaitan users
 	// Akan paparkan senarai users
@@ -37,29 +30,12 @@ Route::group( [ 'prefix' => 'admin' ], function() {
 	Route::get('/users/tambah', 'UserController@create');
 
 	// akan paparkan detail / profile user
-	Route::get('/users/{id}', 'UserController@tambah');
+	Route::get('/users/{id}', 'UserController@show');
 
 
-
-
-
-
-
-	Route::get('/tickets', function() {
-
-		return 'Ini halaman senarai tickets support.';
-
-	});
-
-
-
-
-
-	Route::get('/tickets/{id}', function() {
-
-		return 'Ini halaman detail support ticket.';
-
-	});
+	// Pengurusan tickets
+	Route::get('/tickets', 'TicketController@index');
+	Route::get('/tickets/{id}', 'TicketController@show');
 
 
 
