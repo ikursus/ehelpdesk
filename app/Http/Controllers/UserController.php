@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class UserController extends Controller {
 
@@ -14,7 +15,12 @@ class UserController extends Controller {
 	 */
 	public function index()
 	{
-		return view('admin.users.index');
+		// Panggil data dari table users
+		// $users = User::all();
+		// limitkan rekod untuk 1 page
+		$users = User::paginate(2);
+
+		return view('admin/users/index', compact('page_title', 'users'));
 	}
 
 	/**
