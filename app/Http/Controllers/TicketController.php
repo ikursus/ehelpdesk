@@ -14,7 +14,7 @@ class TicketController extends Controller {
 	 */
 	public function index()
 	{
-		return 'Ini halaman senarai tickets support.';
+		return view('admin.tickets.index');
 	}
 
 	/**
