@@ -29,11 +29,20 @@ Route::group( [ 'prefix' => 'admin' ], function() {
 
 	});
 
-	Route::get('/users', function() {
+	// Route berkaitan users
+	// Akan paparkan senarai users
+	Route::get('/users', 'UserController@index');
 
-		return 'Ini halaman senarai users';
+	// Akan paparkan borang tambah user
+	Route::get('/users/tambah', 'UserController@create');
 
-	});
+	// akan paparkan detail / profile user
+	Route::get('/users/{id}', 'UserController@tambah');
+
+
+
+
+
 
 
 	Route::get('/tickets', function() {
@@ -43,11 +52,7 @@ Route::group( [ 'prefix' => 'admin' ], function() {
 	});
 
 
-	Route::get('/users/{id}', function() {
 
-		return 'Ini halaman senarai profile user.';
-
-	});
 
 
 	Route::get('/tickets/{id}', function() {
@@ -56,11 +61,7 @@ Route::group( [ 'prefix' => 'admin' ], function() {
 
 	});
 
-	Route::get('/users/tambah', function() {
 
-		return 'Ini halaman tambah user.';
-
-	});
 
 	Route::get('/logout', function() {
 
