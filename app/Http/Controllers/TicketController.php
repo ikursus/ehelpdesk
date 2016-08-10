@@ -14,7 +14,7 @@ class TicketController extends Controller {
 	 */
 	public function index()
 	{
-		//
+		return 'Ini halaman senarai tickets support.';
 	}
 
 	/**
@@ -45,7 +45,7 @@ class TicketController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+		return 'Ini halaman detail support ticket.';
 	}
 
 	/**

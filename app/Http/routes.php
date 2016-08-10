@@ -20,6 +20,8 @@ Route::get('/respon', 'PageController@respon');
 // Route admin
 Route::group( [ 'prefix' => 'admin' ], function() {
 
+	// Route bagi folder admin
+	Route::get('/', 'PageController@admin');
 	Route::get('/dashboard', 'PageController@dashboard');
 
 	// Route berkaitan users
@@ -32,7 +34,6 @@ Route::group( [ 'prefix' => 'admin' ], function() {
 	// akan paparkan detail / profile user
 	Route::get('/users/{id}', 'UserController@show');
 
-
 	// Pengurusan tickets
 	Route::get('/tickets', 'TicketController@index');
 	Route::get('/tickets/{id}', 'TicketController@show');
@@ -42,7 +43,6 @@ Route::group( [ 'prefix' => 'admin' ], function() {
 	Route::get('/logout', function() {
 
 		return redirect('/login');
-
 	});
 
 } ); // Tutup kepada route group

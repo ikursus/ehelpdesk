@@ -52,4 +52,16 @@ class PageController extends Controller {
 		return view('respon', compact('page_title'));
 	}
 
+	public function dashboard()
+	{
+		// cari folder resources/views/admin/dashboard.blade.php
+		return view('admin/dashboard');
+	}
+
+	public function admin()
+	{
+		// Fungsi redirect ke halaman lain
+		return redirect('admin/dashboard');
+	}
+
 }
