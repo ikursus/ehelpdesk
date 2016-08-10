@@ -1,1 +1,1 @@
-<h1>Dashboard Admin</h1>
+@extends('admin/layout')
