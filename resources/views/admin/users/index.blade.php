@@ -28,7 +28,7 @@
     <td>{{ ucwords( $user->role ) }}</td>
     <td>
       <a href="{{ url('admin/users/' . $user->id) }}" class="btn btn-xs btn-info">Kemaskini</a>
-      <button class="btn btn-xs btn-danger">Hapus</button>
+      <a href="{{ url('admin/users/' . $user->id . '/delete') }}" class="btn btn-xs btn-danger">Hapus</a>
     </td>
 
   </tr>

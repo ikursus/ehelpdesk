@@ -35,6 +35,7 @@ Route::group( [ 'prefix' => 'admin' ], function() {
 	// akan paparkan detail / profile user
 	Route::get('/users/{id}', 'UserController@show');
 	Route::patch('/users/{id}', 'UserController@update');
+	Route::get('/users/{id}/delete', 'UserController@destroy');
 
 	// Pengurusan tickets
 	Route::get('/tickets', 'TicketController@index');
