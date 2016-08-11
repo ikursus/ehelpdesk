@@ -4,6 +4,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\Registrar;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Http\Request;
+use Auth;
 
 class AuthController extends Controller {
 
@@ -27,12 +29,43 @@ class AuthController extends Controller {
 	 * @param  \Illuminate\Contracts\Auth\Registrar  $registrar
 	 * @return void
 	 */
-	public function __construct(Guard $auth, Registrar $registrar)
-	{
-		$this->auth = $auth;
-		$this->registrar = $registrar;
+	// public function __construct(Guard $auth, Registrar $registrar)
+	// {
+	// 	$this->auth = $auth;
+	// 	$this->registrar = $registrar;
+	//
+	// 	$this->middleware('guest', ['except' => 'getLogout']);
+	// }
 
-		$this->middleware('guest', ['except' => 'getLogout']);
+	public function authenticate( Request $request )
+	{
+		// Tetapkan variables untuk data login
+		$email = $request->input('email');
+		$password = $request->input('password');
+
+		// Jalankan arahan semakan data login
+		if ( Auth::attempt( ['email' => $email, 'password' => $password ] ) )
+		{
+			// Jika berjaya login, redirect ke panel admin
+			// atau ke halaman yang ingin diakses
+			return redirect()->intended('admin');
+		}
+
+		// Jika tak berjaya login, redirect kembali ke halaman sebelum
+		return redirect()->back();
+	}
+
+	public function logout()
+	{
+		// Semak jika ada rekod login
+		if( Auth::check() )
+		{
+			// Jika akses masih ada, log out kan user
+			Auth::logout();
+		}
+
+		// Redirect ke halaman login
+		return redirect('login');
 	}
 
 }

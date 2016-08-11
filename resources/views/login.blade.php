@@ -12,17 +12,17 @@
   </div>
   <div class="panel-body">
 
-    <form>
+    {!! Form::open() !!}
       <div class="form-group">
         <label for="exampleInputEmail1">Email</label>
-        <input type="email" class="form-control" placeholder="Email">
+        <input type="email" name="email" class="form-control" placeholder="Email">
       </div>
       <div class="form-group">
         <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" placeholder="Password">
+        <input type="password" name="password" class="form-control" placeholder="Password">
       </div>
       <button type="submit" class="btn btn-primary">Daftar Masuk</button>
-    </form>
+    {!! Form::close() !!}
 
   </div><!--/.panel-body-->
 </div><!--/.panel-->

@@ -39,7 +39,7 @@ class PageController extends Controller {
 	 */
 	public function hubungi()
 	{
-		$page_title = 'Halaman Hubungi';
+		$page_title = 'Borang Pesanan / Hubungi';
 
 		return view('hubungi', compact('page_title'));
 	}

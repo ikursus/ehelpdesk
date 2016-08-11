@@ -13,6 +13,7 @@
 
 Route::get('/', 'PageController@index');
 Route::get('/login', 'PageController@login');
+Route::post('/login', 'Auth\AuthController@authenticate');
 Route::get('/hubungi', 'PageController@hubungi');
 Route::get('/respon', 'PageController@respon');
 
@@ -40,12 +41,6 @@ Route::group( [ 'prefix' => 'admin' ], function() {
 	// Pengurusan tickets
 	Route::get('/tickets', 'TicketController@index');
 	Route::get('/tickets/{id}', 'TicketController@show');
+	Route::get('/logout', 'Auth\AuthController@logout');
 
-
-
-	Route::get('/logout', function() {
-
-		return redirect('/login');
-	});
-
-} ); // Tutup kepada route group
+}); // Tutup kepada route group

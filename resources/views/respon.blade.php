@@ -12,17 +12,41 @@
   </div>
   <div class="panel-body">
 
-    <form>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Email</label>
-        <input type="email" class="form-control" placeholder="Email">
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" placeholder="Password">
-      </div>
-      <button type="submit" class="btn btn-primary">Daftar Masuk</button>
-    </form>
+    @if ( Auth::user() )
+
+    @foreach( )
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Perkara</th>
+          <th>Detail</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Subjek</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Pesanan</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Respon</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+
+    @endforeach
+
+    @else
+
+    <div class="alert alert-warning">
+        <p>Sila login terlebih dahulu</a>
+    </div
+
+    @endif
 
   </div><!--/.panel-body-->
 </div><!--/.panel-->

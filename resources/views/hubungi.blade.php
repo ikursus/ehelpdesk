@@ -12,30 +12,33 @@
   </div>
   <div class="panel-body">
 
-    <form>
-      <div class="form-group">
-        <label>Nama</label>
-        <input type="text" class="form-control" placeholder="Nama Anda...">
-      </div>
-      <div class="form-group">
-        <label>Email</label>
-        <input type="email" class="form-control" placeholder="Email Anda...">
-      </div>
-      <div class="form-group">
-        <label>Telefon</label>
-        <input type="text" class="form-control" placeholder="Telefon Anda...">
-      </div>
+    @if ( Auth::user() )
+
+    {!! Form::open() !!}
+
+      <p>Sila tinggalkan pesanan anda di sini.</p>
+
       <hr>
       <div class="form-group">
         <label>Subjek</label>
-        <input type="text" name="subjek" class="form-control" placeholder="Nama Anda...">
+        {!! Form::text('subject', null, ['class' => 'form-control']) !!}
       </div>
       <div class="form-group">
-        <label>Nama</label>
-        <input type="text" name="content" class="form-control" placeholder="Nama Anda...">
+        <label>Pesanan</label>
+        {!! Form::textarea('content', null, ['class' => 'form-control']) !!}
       </div>
       <button type="submit" class="btn btn-primary">Hantar Ticket</button>
-    </form>
+
+    {!! Form::close() !!}
+
+    @else
+
+    <div class="alert alert-warning">
+        <p>Sila login terlebih dahulu</a>
+    </div
+
+    @endif
+
 
   </div><!--/.panel-body-->
 </div><!--/.panel-->
