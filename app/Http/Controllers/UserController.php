@@ -116,7 +116,8 @@ class UserController extends Controller {
 		$user = User::find($id);
 
 		// Request semua data dari input field di borang
-		$data = $request->all();
+		// Kecuali password kerana password akan di encrypt
+		$data = $request->except('password');
 
 		// Semak jika ruangan password tak kosong,
 		// update password baru
