@@ -32,7 +32,7 @@
     <label>Role</label>
     {!! Form::select('username', array('admin' => 'Admin', 'user' => 'User'), null, ['class' => 'form-control']) !!}
   </div>
-  <button type="submit" class="btn btn-primary">Daftar Masuk</button>
+  <button type="submit" class="btn btn-primary">Daftar User</button>
 
 {!! Form::close() !!}
 
