@@ -14,7 +14,7 @@
   </div>
   <div class="form-group">
     <label>Email</label>
-    {!! Form::email('username', null, ['class' => 'form-control']) !!}
+    {!! Form::email('email', null, ['class' => 'form-control']) !!}
   </div>
   <div class="form-group">
     <label>Name</label>
@@ -30,7 +30,7 @@
   </div>
   <div class="form-group">
     <label>Role</label>
-    {!! Form::select('username', array('admin' => 'Admin', 'user' => 'User'), null, ['class' => 'form-control']) !!}
+    {!! Form::select('role', array('admin' => 'Admin', 'user' => 'User'), null, ['class' => 'form-control']) !!}
   </div>
   <button type="submit" class="btn btn-primary">Daftar User</button>
 
