@@ -13,6 +13,9 @@
         <tr class="active">
           <th>Username</th>
           <th>Nama</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Tindakan</th>
         </tr>
     </thead>
     <tbody>
@@ -21,6 +24,12 @@
 
     <td>{{ $user->username }}</td>
     <td>{{ $user->name }}</td>
+    <td>{{ $user->email }}</td>
+    <td>{{ ucwords( $user->role ) }}</td>
+    <td>
+      <a href="{{ url('admin/users/' . $user->id) }}" class="btn btn-xs btn-info">Kemaskini</a>
+      <button class="btn btn-xs btn-danger">Hapus</button>
+    </td>
 
   </tr>
   @endforeach
