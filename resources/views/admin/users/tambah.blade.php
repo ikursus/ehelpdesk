@@ -8,9 +8,10 @@
 
 {!! Form::open() !!}
 
-  <div class="form-group">
+  <div class="form-group {!! $errors->first('username', 'has-error') !!}">
     <label>Username</label>
     {!! Form::text('username', null, ['class' => 'form-control']) !!}
+    {!! $errors->first('username', '<span class="text-danger">:message</span>') !!}
   </div>
   <div class="form-group">
     <label>Email</label>

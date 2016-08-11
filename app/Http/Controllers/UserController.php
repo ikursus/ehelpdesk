@@ -50,6 +50,12 @@ class UserController extends Controller {
 	 */
 	public function store( Request $request )
 	{
+		// Validation Form untuk tambah user
+		$this->validate( $request, array(
+			'username' => 'required|min:3|unique:users,username',
+			'email' => 'required|email|unique:users,email'
+		));
+
 		// Request semua data dari input field di borang
 		$data = $request->all();
 
