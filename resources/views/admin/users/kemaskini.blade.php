@@ -2,10 +2,10 @@
 
 @section('content')
 
-<h1>Tambah User</h1>
+<h1>Kemaskini User - {{ $user->name }}</h1>
 
 <hr>
-{!! Form::open() !!}
+{!! Form::model( $user ) !!}
 
   <div class="form-group {!! $errors->first('username', 'has-error') !!}">
     <label>Username</label>
