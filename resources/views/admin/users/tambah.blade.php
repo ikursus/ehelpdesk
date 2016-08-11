@@ -30,7 +30,7 @@
   </div>
   <div class="form-group">
     <label>Role</label>
-    {!! Form::select('role', array('admin' => 'Admin', 'user' => 'User'), null, ['class' => 'form-control']) !!}
+    {!! Form::select('role', $dropdown, null, ['class' => 'form-control']) !!}
   </div>
   <button type="submit" class="btn btn-primary">Daftar User</button>
 

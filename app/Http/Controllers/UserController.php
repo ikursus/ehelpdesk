@@ -37,8 +37,10 @@ class UserController extends Controller {
 	 */
 	public function create()
 	{
+		$dropdown = array('admin' => 'Admin', 'user' => 'User');
+
 		// view() laravel akan cari template tambah.blade.php dalam direktori resources/views
-		return view('admin/users/tambah');
+		return view('admin/users/tambah', compact('dropdown'));
 	}
 
 	/**
