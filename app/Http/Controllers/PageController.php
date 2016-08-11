@@ -48,8 +48,9 @@ class PageController extends Controller {
 	public function respon()
 	{
 		$page_title = 'Halaman Respon';
+		$tickets = null;
 
-		return view('respon', compact('page_title'));
+		return view('respon', compact('page_title', 'tickets'));
 	}
 
 	public function dashboard()

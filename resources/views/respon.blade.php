@@ -14,7 +14,7 @@
 
     @if ( Auth::user() )
 
-    @foreach( )
+    @foreach( $tickets as $ticket )
     <table class="table table-bordered">
       <thead>
         <tr>
