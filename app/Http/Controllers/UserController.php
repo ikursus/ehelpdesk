@@ -46,9 +46,13 @@ class UserController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store( Request $request )
 	{
-		//
+		$data = $request->all();
+
+		dd($data);
+
+
 	}
 
 	/**

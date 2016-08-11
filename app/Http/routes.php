@@ -30,6 +30,7 @@ Route::group( [ 'prefix' => 'admin' ], function() {
 
 	// Akan paparkan borang tambah user
 	Route::get('/users/tambah', 'UserController@create');
+	Route::post('/users/tambah', 'UserController@store');
 
 	// akan paparkan detail / profile user
 	Route::get('/users/{id}', 'UserController@show');
