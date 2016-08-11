@@ -18,7 +18,7 @@ class UserController extends Controller {
 		// Panggil data dari table users
 		// $users = User::all();
 		// limitkan rekod untuk per page
-		$users = User::paginate(2);
+		$users = User::paginate(10);
 
 		// $users = User::where('role', '=', 'admin')
 		// ->where('created_at', '>=', $date )
