@@ -82,7 +82,6 @@ class UserController extends Controller {
 		// Return view templte kemaskini.blade.php dari folder admin/users
 		return view('admin/users/kemaskini', compact('user'));
 
-
 	}
 
 	/**
