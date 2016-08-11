@@ -76,7 +76,13 @@ class UserController extends Controller {
 	 */
 	public function show($id)
 	{
-		return 'Ini halaman senarai profile user.';
+
+
+
+		// Return view templte kemaskini.blade.php dari folder admin/users
+		return view('admin/users/kemaskini');
+
+
 	}
 
 	/**
