@@ -53,7 +53,8 @@ class UserController extends Controller {
 		// Validation Form untuk tambah user
 		$this->validate( $request, array(
 			'username' => 'required|min:3|unique:users,username',
-			'email' => 'required|email|unique:users,email'
+			'email' => 'required|email|unique:users,email',
+			'password' => 'confirmed|required|min:3'
 		));
 
 		// Request semua data dari input field di borang

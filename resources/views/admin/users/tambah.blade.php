@@ -5,7 +5,6 @@
 <h1>Tambah User</h1>
 
 <hr>
-
 {!! Form::open() !!}
 
   <div class="form-group {!! $errors->first('username', 'has-error') !!}">
@@ -16,6 +15,7 @@
   <div class="form-group">
     <label>Email</label>
     {!! Form::email('email', null, ['class' => 'form-control']) !!}
+    {!! $errors->first('email', '<span class="text-danger">:message</span>') !!}
   </div>
   <div class="form-group">
     <label>Name</label>
@@ -24,6 +24,7 @@
   <div class="form-group">
     <label>Password</label>
     {!! Form::password('password', ['class' => 'form-control']) !!}
+    {!! $errors->first('password', '<span class="text-danger">:message</span>') !!}
   </div>
   <div class="form-group">
     <label>Password Confirmation</label>
