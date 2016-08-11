@@ -59,6 +59,8 @@ class UserController extends Controller {
 
 		// Request semua data dari input field di borang
 		$data = $request->all();
+		// Encrypt password
+		$data['password'] = bcrypt( $request->input('password') );
 
 		// $data = $request->only('username', 'email');
 
@@ -107,7 +109,7 @@ class UserController extends Controller {
 		$this->validate( $request, array(
 			'username' => 'required|min:3|unique:users,username,' . $id,
 			'email' => 'required|email|unique:users,email,' . $id,
-			'password' => 'confirmed|required|min:3'
+			'password' => 'confirmed|min:3'
 		));
 
 		// Cari data user yang nak dikemaskini
@@ -115,8 +117,14 @@ class UserController extends Controller {
 
 		// Request semua data dari input field di borang
 		$data = $request->all();
-		// Encrypt password
-		$data['password'] = bcrypt( $request->input('password') );
+
+		// Semak jika ruangan password tak kosong,
+		// update password baru
+		if ( ! empty( $request->input('password') ))
+		{
+			// Encrypt password
+			$data['password'] = bcrypt( $request->input('password') );
+		}
 
 		// Update data ke dalam table berdasarkan id pilihan
 		$user->update( $data );
