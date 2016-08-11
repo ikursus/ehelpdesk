@@ -4,6 +4,10 @@
 
   <h1>Senarai Users</h1>
 
+  <a href="{{ url('admin/users/tambah') }}" class="btn btn-primary">Tambah User</a>
+
+  <hr>
+
   <table class="table table-bordered table-hover">
     <thead>
         <tr class="active">

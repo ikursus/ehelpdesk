@@ -14,14 +14,27 @@
 
     <form>
       <div class="form-group">
-        <label for="exampleInputEmail1">Email</label>
-        <input type="email" class="form-control" placeholder="Email">
+        <label>Nama</label>
+        <input type="text" class="form-control" placeholder="Nama Anda...">
       </div>
       <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" placeholder="Password">
+        <label>Email</label>
+        <input type="email" class="form-control" placeholder="Email Anda...">
       </div>
-      <button type="submit" class="btn btn-primary">Daftar Masuk</button>
+      <div class="form-group">
+        <label>Telefon</label>
+        <input type="text" class="form-control" placeholder="Telefon Anda...">
+      </div>
+      <hr>
+      <div class="form-group">
+        <label>Subjek</label>
+        <input type="text" name="subjek" class="form-control" placeholder="Nama Anda...">
+      </div>
+      <div class="form-group">
+        <label>Nama</label>
+        <input type="text" name="content" class="form-control" placeholder="Nama Anda...">
+      </div>
+      <button type="submit" class="btn btn-primary">Hantar Ticket</button>
     </form>
 
   </div><!--/.panel-body-->
