@@ -103,11 +103,20 @@ class UserController extends Controller {
 	 */
 	public function update($id, Request $request )
 	{
+		// Validation Form untuk tambah user
+		$this->validate( $request, array(
+			'username' => 'required|min:3|unique:users,username,' . $id,
+			'email' => 'required|email|unique:users,email,' . $id,
+			'password' => 'confirmed|required|min:3'
+		));
+
 		// Cari data user yang nak dikemaskini
 		$user = User::find($id);
 
 		// Request semua data dari input field di borang
 		$data = $request->all();
+		// Encrypt password
+		$data['password'] = bcrypt( $request->input('password') );
 
 		// Update data ke dalam table berdasarkan id pilihan
 		$user->update( $data );
