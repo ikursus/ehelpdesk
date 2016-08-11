@@ -48,11 +48,15 @@ class UserController extends Controller {
 	 */
 	public function store( Request $request )
 	{
+		// Request semua data dari input field di borang
 		$data = $request->all();
 
-		dd($data);
+		// $data = $request->only('username', 'email');
 
+		// Simpan data ke table users.
+		User::create( $data );
 
+		return redirect('admin/users');
 	}
 
 	/**
