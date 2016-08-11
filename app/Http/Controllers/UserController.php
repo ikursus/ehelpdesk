@@ -142,10 +142,11 @@ class UserController extends Controller {
 	 */
 	public function destroy($id)
 	{
+		// Cari data user yang nak di delete
 		$user = User::find($id);
-
+		// Jalankan arahan delete
 		$user->delete();
-
+		// Redirect ke halaman senarai user
 		return redirect('admin/users');
 	}
 
