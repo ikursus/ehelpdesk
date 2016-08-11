@@ -101,9 +101,19 @@ class UserController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($id, Request $request )
 	{
-		//
+		// Cari data user yang nak dikemaskini
+		$user = User::find($id);
+
+		// Request semua data dari input field di borang
+		$data = $request->all();
+
+		// Update data ke dalam table berdasarkan id pilihan
+		$user->update( $data );
+
+		// Redirect ke halaman profile semula
+		return redirect()->back();
 	}
 
 	/**

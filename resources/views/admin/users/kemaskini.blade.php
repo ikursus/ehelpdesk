@@ -5,7 +5,7 @@
 <h1>Kemaskini User - {{ $user->name }}</h1>
 
 <hr>
-{!! Form::model( $user ) !!}
+{!! Form::model( $user, ['method' => 'patch'] ) !!}
 
   <div class="form-group {!! $errors->first('username', 'has-error') !!}">
     <label>Username</label>
