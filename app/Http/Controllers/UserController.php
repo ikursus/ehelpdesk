@@ -76,11 +76,11 @@ class UserController extends Controller {
 	 */
 	public function show($id)
 	{
-
-
+		// Cari user berdasarkan ID yang dipilih
+		$user = User::find($id);
 
 		// Return view templte kemaskini.blade.php dari folder admin/users
-		return view('admin/users/kemaskini');
+		return view('admin/users/kemaskini', compact('user'));
 
 
 	}
